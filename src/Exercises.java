@@ -9,6 +9,7 @@ public class Exercises {
         int altnumarInterg = 55;
         int target = 10000;
         int nrMaxDonatii = 10;
+        String fraza = "Exercitiul 6. Am scris o functie care primeste un string cu o fraza. Adica, mai multe propozitii despartite prin punct. Se printeaza fiecare propozitie pe o linie noua.";
 
         System.out.println("Ex.1: Suma numerelor intregi din sir este: " + sumNumereIntregi(sirNumereIntregi));
         System.out.println("Ex.2: Numarul de elemente impare din sir este: " + nrElementeImpare(sirNumereIntregi));
@@ -17,7 +18,11 @@ public class Exercises {
         targetDonatii(target);
         System.out.println("Ex.5: ");
         targetCuMaximNumarDonatii(target, nrMaxDonatii);
+        System.out.println("Ex.6: ");
+        printarePeMaiMulteLinii(fraza);
     }
+
+
 
 
     //1.scrieti o functie care primeste un sir de numere intregi si returneaza suma lor
@@ -78,7 +83,7 @@ public class Exercises {
         int sumaObtinuta = 0;
 
         do {
-            sumaDonata = random.nextInt(target);   //random.nextInt();
+            sumaDonata = random.nextInt(target);
             System.out.println("Suma donata random este: " + sumaDonata);
 
             sumaObtinuta += sumaDonata;
@@ -122,7 +127,12 @@ public class Exercises {
 
     //6) scrieti o functie care primeste un string cu o fraza (mai multe propozitii despartite prin punct).
     // Printati fiecare propozitie pe o linie noua
-
+    public static void printarePeMaiMulteLinii(String fraza) {
+        String[] propozitii = fraza.split("[.]");
+        for ( int i = 0; i< propozitii.length;i++){
+            System.out.println(propozitii[i].trim().concat("."));
+        }
+    }
 
 
 }
